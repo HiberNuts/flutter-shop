@@ -7,9 +7,7 @@ import '../models/http_exception.dart';
 import './product.dart';
 
 class Products with ChangeNotifier {
-  List<Product> _items = [
-    
-  ];
+  List<Product> _items = [];
 
   final String authToken;
 
@@ -24,7 +22,7 @@ class Products with ChangeNotifier {
   }
 
   Product findById(String id) {
-    return _items.firstWhere((prod) => prod.id == id, orElse: () => null);
+    return _items.firstWhere((prod) => prod.id == id);
   }
 
   Future<void> fetchAndSetProducts() async {
